@@ -1,0 +1,25 @@
+# Crea fahrcel.exe
+
+
+CFLAGS   = -std=c11 -Wall -pedantic-errors -m32 -D __DEBUG__ -g3 $(INCS)
+# LDFLAGS  = -static-libgcc
+INCS     = -I"C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/
+include"
+LDLIBS   = -L"C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32"
+
+
+fahrCel.exe: fahrCel.o conversion.o
+ gcc fahrCel.o conversion.o -o fahrCel.exe $(CFLAGS) $(LDFLAGS) $(LDLIBS) 
+
+
+fahrCel.o: fahrCel.c conversion.h
+ gcc -c fahrCel.c -o fahrCel.o $(CFLAGS)
+
+
+conversion.o: conversion.h conversion.c
+ gcc -c conversion.c -o conversion.o $(CFLAGS)
+
+
+.PHONY: clean
+clean:
+ rm -f fahrCel.o conversion.o fahrCel.exe

@@ -8,12 +8,12 @@ include"
 LDLIBS   = -L"C:/Program Files/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32"
 
 
-fahrCel.exe: fahrCel.o conversion.o
- gcc fahrCel.o conversion.o -o fahrCel.exe $(CFLAGS) $(LDFLAGS) $(LDLIBS) 
+fahrcel.exe: fahrcel.o conversion.o
+ gcc fahrcel.o conversion.o -o fahrcel.exe $(CFLAGS) $(LDFLAGS) $(LDLIBS) 
 
 
-fahrCel.o: fahrCel.c conversion.h
- gcc -c fahrCel.c -o fahrCel.o $(CFLAGS)
+fahrcel.o: fahrcel.c conversion.h
+ gcc -c fahrcel.c -o fahrcel.o $(CFLAGS)
 
 
 conversion.o: conversion.h conversion.c
@@ -22,4 +22,4 @@ conversion.o: conversion.h conversion.c
 
 .PHONY: clean
 clean:
- rm -f fahrCel.o conversion.o fahrCel.exe
+ rm -f fahrcel.o conversion.o fahrcel.exe
